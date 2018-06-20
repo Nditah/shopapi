@@ -1,0 +1,15 @@
+# dependencies
+/node_modules
+
+# misc
+/delete
+desktop.ini
+.DS_Store
+.env
+
+
+
+
+
+
+
