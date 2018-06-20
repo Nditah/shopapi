@@ -1,18 +1,21 @@
-module.exports = (app) => {
-    const notes = require('../controllers/note.controller.js');
+import express from 'express'
+import * as notes from '../controllers/note.controller.js'
 
-    // Create a new Note
-    app.post('/notes', notes.create);
+const noteRoute = express.Router();
 
-    // Retrieve all Notes
-    app.get('/notes', notes.findAll);
+// Create a new Note
+noteRoute.post('/notes', notes.create);
 
-    // Retrieve a single Note with noteId
-    app.get('/notes/:noteId', notes.findOne);
+// Retrieve all Notes
+noteRoute.get('/notes', notes.findAll);
 
-    // Update a Note with noteId
-    app.put('/notes/:noteId', notes.update);
+// Retrieve a single Note with noteId
+noteRoute.get('/notes/:noteId', notes.findOne);
 
-    // Delete a Note with noteId
-    app.delete('/notes/:noteId', notes.delete);
-}
+// Update a Note with noteId
+noteRoute.put('/notes/:noteId', notes.update);
+
+// Delete a Note with noteId
+noteRoute.delete('/notes/:noteId', notes.delete);
+
+export default noteRoute
