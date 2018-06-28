@@ -1,22 +1,23 @@
 
-import express from "express";
-import * as records from "./../controllers/recordController";
+	import express from "express";
+	import * as coupons from "./../controllers/couponController";
 
-const recordRoute = express.Router();
+	const couponRoute = express.Router();
 
-// Create a new record
-recordRoute.post("/records", records.create);
+	// Create a new coupon
+	couponRoute.post("/coupons", coupons.create);
 
-// Retrieve all Notes
-recordRoute.get("/records", records.findAll);
+	// Retrieve all Notes
+	couponRoute.get("/coupons", coupons.findAll);
 
-// Retrieve a single record with recordId
-recordRoute.get("/records/:recordId", records.findOne);
+	// Retrieve a single coupon with couponId
+	couponRoute.get("/coupons/:couponId", coupons.findOne);
 
-// Update a record with recordId
-recordRoute.put("/records/:recordId", records.update);
+	// Update a coupon with couponId
+	couponRoute.put("/coupons/:couponId", coupons.update);
 
-// Delete a record with recordId
-recordRoute.delete("/records/:recordId", records.delete);
+	// Delete a coupon with couponId
+	couponRoute.delete("/coupons/:couponId", coupons.delete);
 
-export default recordRoute;
+	export default couponRoute;
+	

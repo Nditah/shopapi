@@ -1,22 +1,23 @@
 
-import express from "express";
-import * as records from "./../controllers/recordController";
+	import express from "express";
+	import * as subscribes from "./../controllers/subscribeController";
 
-const recordRoute = express.Router();
+	const subscribeRoute = express.Router();
 
-// Create a new record
-recordRoute.post("/records", records.create);
+	// Create a new subscribe
+	subscribeRoute.post("/subscribes", subscribes.create);
 
-// Retrieve all Notes
-recordRoute.get("/records", records.findAll);
+	// Retrieve all Notes
+	subscribeRoute.get("/subscribes", subscribes.findAll);
 
-// Retrieve a single record with recordId
-recordRoute.get("/records/:recordId", records.findOne);
+	// Retrieve a single subscribe with subscribeId
+	subscribeRoute.get("/subscribes/:subscribeId", subscribes.findOne);
 
-// Update a record with recordId
-recordRoute.put("/records/:recordId", records.update);
+	// Update a subscribe with subscribeId
+	subscribeRoute.put("/subscribes/:subscribeId", subscribes.update);
 
-// Delete a record with recordId
-recordRoute.delete("/records/:recordId", records.delete);
+	// Delete a subscribe with subscribeId
+	subscribeRoute.delete("/subscribes/:subscribeId", subscribes.delete);
 
-export default recordRoute;
+	export default subscribeRoute;
+	

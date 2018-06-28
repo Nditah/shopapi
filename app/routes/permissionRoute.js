@@ -1,22 +1,23 @@
 
-import express from "express";
-import * as records from "./../controllers/recordController";
+	import express from "express";
+	import * as permissions from "./../controllers/permissionController";
 
-const recordRoute = express.Router();
+	const permissionRoute = express.Router();
 
-// Create a new record
-recordRoute.post("/records", records.create);
+	// Create a new permission
+	permissionRoute.post("/permissions", permissions.create);
 
-// Retrieve all Notes
-recordRoute.get("/records", records.findAll);
+	// Retrieve all Notes
+	permissionRoute.get("/permissions", permissions.findAll);
 
-// Retrieve a single record with recordId
-recordRoute.get("/records/:recordId", records.findOne);
+	// Retrieve a single permission with permissionId
+	permissionRoute.get("/permissions/:permissionId", permissions.findOne);
 
-// Update a record with recordId
-recordRoute.put("/records/:recordId", records.update);
+	// Update a permission with permissionId
+	permissionRoute.put("/permissions/:permissionId", permissions.update);
 
-// Delete a record with recordId
-recordRoute.delete("/records/:recordId", records.delete);
+	// Delete a permission with permissionId
+	permissionRoute.delete("/permissions/:permissionId", permissions.delete);
 
-export default recordRoute;
+	export default permissionRoute;
+	

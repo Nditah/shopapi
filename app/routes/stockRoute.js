@@ -1,22 +1,23 @@
 
-import express from "express";
-import * as records from "./../controllers/recordController";
+	import express from "express";
+	import * as stocks from "./../controllers/stockController";
 
-const recordRoute = express.Router();
+	const stockRoute = express.Router();
 
-// Create a new record
-recordRoute.post("/records", records.create);
+	// Create a new stock
+	stockRoute.post("/stocks", stocks.create);
 
-// Retrieve all Notes
-recordRoute.get("/records", records.findAll);
+	// Retrieve all Notes
+	stockRoute.get("/stocks", stocks.findAll);
 
-// Retrieve a single record with recordId
-recordRoute.get("/records/:recordId", records.findOne);
+	// Retrieve a single stock with stockId
+	stockRoute.get("/stocks/:stockId", stocks.findOne);
 
-// Update a record with recordId
-recordRoute.put("/records/:recordId", records.update);
+	// Update a stock with stockId
+	stockRoute.put("/stocks/:stockId", stocks.update);
 
-// Delete a record with recordId
-recordRoute.delete("/records/:recordId", records.delete);
+	// Delete a stock with stockId
+	stockRoute.delete("/stocks/:stockId", stocks.delete);
 
-export default recordRoute;
+	export default stockRoute;
+	

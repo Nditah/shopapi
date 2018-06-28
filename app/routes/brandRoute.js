@@ -1,22 +1,23 @@
 
-import express from "express";
-import * as records from "./../controllers/recordController";
+	import express from "express";
+	import * as brands from "./../controllers/brandController";
 
-const recordRoute = express.Router();
+	const brandRoute = express.Router();
 
-// Create a new record
-recordRoute.post("/records", records.create);
+	// Create a new brand
+	brandRoute.post("/brands", brands.create);
 
-// Retrieve all Notes
-recordRoute.get("/records", records.findAll);
+	// Retrieve all Notes
+	brandRoute.get("/brands", brands.findAll);
 
-// Retrieve a single record with recordId
-recordRoute.get("/records/:recordId", records.findOne);
+	// Retrieve a single brand with brandId
+	brandRoute.get("/brands/:brandId", brands.findOne);
 
-// Update a record with recordId
-recordRoute.put("/records/:recordId", records.update);
+	// Update a brand with brandId
+	brandRoute.put("/brands/:brandId", brands.update);
 
-// Delete a record with recordId
-recordRoute.delete("/records/:recordId", records.delete);
+	// Delete a brand with brandId
+	brandRoute.delete("/brands/:brandId", brands.delete);
 
-export default recordRoute;
+	export default brandRoute;
+	

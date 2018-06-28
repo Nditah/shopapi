@@ -1,22 +1,23 @@
 
-import express from "express";
-import * as records from "./../controllers/recordController";
+	import express from "express";
+	import * as languages from "./../controllers/languageController";
 
-const recordRoute = express.Router();
+	const languageRoute = express.Router();
 
-// Create a new record
-recordRoute.post("/records", records.create);
+	// Create a new language
+	languageRoute.post("/languages", languages.create);
 
-// Retrieve all Notes
-recordRoute.get("/records", records.findAll);
+	// Retrieve all Notes
+	languageRoute.get("/languages", languages.findAll);
 
-// Retrieve a single record with recordId
-recordRoute.get("/records/:recordId", records.findOne);
+	// Retrieve a single language with languageId
+	languageRoute.get("/languages/:languageId", languages.findOne);
 
-// Update a record with recordId
-recordRoute.put("/records/:recordId", records.update);
+	// Update a language with languageId
+	languageRoute.put("/languages/:languageId", languages.update);
 
-// Delete a record with recordId
-recordRoute.delete("/records/:recordId", records.delete);
+	// Delete a language with languageId
+	languageRoute.delete("/languages/:languageId", languages.delete);
 
-export default recordRoute;
+	export default languageRoute;
+	

@@ -1,22 +1,23 @@
 
-import express from "express";
-import * as records from "./../controllers/recordController";
+	import express from "express";
+	import * as blogs from "./../controllers/blogController";
 
-const recordRoute = express.Router();
+	const blogRoute = express.Router();
 
-// Create a new record
-recordRoute.post("/records", records.create);
+	// Create a new blog
+	blogRoute.post("/blogs", blogs.create);
 
-// Retrieve all Notes
-recordRoute.get("/records", records.findAll);
+	// Retrieve all Notes
+	blogRoute.get("/blogs", blogs.findAll);
 
-// Retrieve a single record with recordId
-recordRoute.get("/records/:recordId", records.findOne);
+	// Retrieve a single blog with blogId
+	blogRoute.get("/blogs/:blogId", blogs.findOne);
 
-// Update a record with recordId
-recordRoute.put("/records/:recordId", records.update);
+	// Update a blog with blogId
+	blogRoute.put("/blogs/:blogId", blogs.update);
 
-// Delete a record with recordId
-recordRoute.delete("/records/:recordId", records.delete);
+	// Delete a blog with blogId
+	blogRoute.delete("/blogs/:blogId", blogs.delete);
 
-export default recordRoute;
+	export default blogRoute;
+	

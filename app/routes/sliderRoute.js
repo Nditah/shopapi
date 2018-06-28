@@ -1,22 +1,23 @@
 
-import express from "express";
-import * as records from "./../controllers/recordController";
+	import express from "express";
+	import * as sliders from "./../controllers/sliderController";
 
-const recordRoute = express.Router();
+	const sliderRoute = express.Router();
 
-// Create a new record
-recordRoute.post("/records", records.create);
+	// Create a new slider
+	sliderRoute.post("/sliders", sliders.create);
 
-// Retrieve all Notes
-recordRoute.get("/records", records.findAll);
+	// Retrieve all Notes
+	sliderRoute.get("/sliders", sliders.findAll);
 
-// Retrieve a single record with recordId
-recordRoute.get("/records/:recordId", records.findOne);
+	// Retrieve a single slider with sliderId
+	sliderRoute.get("/sliders/:sliderId", sliders.findOne);
 
-// Update a record with recordId
-recordRoute.put("/records/:recordId", records.update);
+	// Update a slider with sliderId
+	sliderRoute.put("/sliders/:sliderId", sliders.update);
 
-// Delete a record with recordId
-recordRoute.delete("/records/:recordId", records.delete);
+	// Delete a slider with sliderId
+	sliderRoute.delete("/sliders/:sliderId", sliders.delete);
 
-export default recordRoute;
+	export default sliderRoute;
+	

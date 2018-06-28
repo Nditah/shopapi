@@ -1,22 +1,23 @@
 
-import express from "express";
-import * as records from "./../controllers/recordController";
+	import express from "express";
+	import * as categorys from "./../controllers/categoryController";
 
-const recordRoute = express.Router();
+	const categoryRoute = express.Router();
 
-// Create a new record
-recordRoute.post("/records", records.create);
+	// Create a new category
+	categoryRoute.post("/categorys", categorys.create);
 
-// Retrieve all Notes
-recordRoute.get("/records", records.findAll);
+	// Retrieve all Notes
+	categoryRoute.get("/categorys", categorys.findAll);
 
-// Retrieve a single record with recordId
-recordRoute.get("/records/:recordId", records.findOne);
+	// Retrieve a single category with categoryId
+	categoryRoute.get("/categorys/:categoryId", categorys.findOne);
 
-// Update a record with recordId
-recordRoute.put("/records/:recordId", records.update);
+	// Update a category with categoryId
+	categoryRoute.put("/categorys/:categoryId", categorys.update);
 
-// Delete a record with recordId
-recordRoute.delete("/records/:recordId", records.delete);
+	// Delete a category with categoryId
+	categoryRoute.delete("/categorys/:categoryId", categorys.delete);
 
-export default recordRoute;
+	export default categoryRoute;
+	

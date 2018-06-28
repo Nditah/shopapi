@@ -1,22 +1,22 @@
 
 import express from "express";
-import * as records from "./../controllers/recordController";
+import * as admins from "./../controllers/adminController";
 
-const recordRoute = express.Router();
+const adminRoute = express.Router();
 
-// Create a new record
-recordRoute.post("/records", records.create);
+// Create a new admin
+adminRoute.post("/admins", admins.create);
 
 // Retrieve all Notes
-recordRoute.get("/records", records.findAll);
+adminRoute.get("/admins", admins.findAll);
 
-// Retrieve a single record with recordId
-recordRoute.get("/records/:recordId", records.findOne);
+// Retrieve a single admin with adminId
+adminRoute.get("/admins/:adminId", admins.findOne);
 
-// Update a record with recordId
-recordRoute.put("/records/:recordId", records.update);
+// Update a admin with adminId
+adminRoute.put("/admins/:adminId", admins.update);
 
-// Delete a record with recordId
-recordRoute.delete("/records/:recordId", records.delete);
+// Delete a admin with adminId
+adminRoute.delete("/admins/:adminId", admins.delete);
 
-export default recordRoute;
+export default adminRoute;

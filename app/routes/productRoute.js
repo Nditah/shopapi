@@ -1,21 +1,23 @@
-import express from "express";
-import * as products from "./../controllers/productController";
 
-const productRoute = express.Router();
+	import express from "express";
+	import * as products from "./../controllers/productController";
 
-// Create a new Note
-productRoute.post("/products", products.create);
+	const productRoute = express.Router();
 
-// Retrieve all Notes
-productRoute.get("/products", products.findAll);
+	// Create a new product
+	productRoute.post("/products", products.create);
 
-// Retrieve a single Note with productId
-productRoute.get("/products/:productId", products.findOne);
+	// Retrieve all Notes
+	productRoute.get("/products", products.findAll);
 
-// Update a Note with productId
-productRoute.put("/products/:productId", products.update);
+	// Retrieve a single product with productId
+	productRoute.get("/products/:productId", products.findOne);
 
-// Delete a Note with productId
-productRoute.delete("/products/:productId", products.delete);
+	// Update a product with productId
+	productRoute.put("/products/:productId", products.update);
 
-export default productRoute;
+	// Delete a product with productId
+	productRoute.delete("/products/:productId", products.delete);
+
+	export default productRoute;
+	

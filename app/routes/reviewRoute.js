@@ -1,22 +1,23 @@
 
-import express from "express";
-import * as records from "./../controllers/recordController";
+	import express from "express";
+	import * as reviews from "./../controllers/reviewController";
 
-const recordRoute = express.Router();
+	const reviewRoute = express.Router();
 
-// Create a new record
-recordRoute.post("/records", records.create);
+	// Create a new review
+	reviewRoute.post("/reviews", reviews.create);
 
-// Retrieve all Notes
-recordRoute.get("/records", records.findAll);
+	// Retrieve all Notes
+	reviewRoute.get("/reviews", reviews.findAll);
 
-// Retrieve a single record with recordId
-recordRoute.get("/records/:recordId", records.findOne);
+	// Retrieve a single review with reviewId
+	reviewRoute.get("/reviews/:reviewId", reviews.findOne);
 
-// Update a record with recordId
-recordRoute.put("/records/:recordId", records.update);
+	// Update a review with reviewId
+	reviewRoute.put("/reviews/:reviewId", reviews.update);
 
-// Delete a record with recordId
-recordRoute.delete("/records/:recordId", records.delete);
+	// Delete a review with reviewId
+	reviewRoute.delete("/reviews/:reviewId", reviews.delete);
 
-export default recordRoute;
+	export default reviewRoute;
+	

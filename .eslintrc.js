@@ -4,6 +4,7 @@ module.exports = {
         "semi": ["error", "always"],
         "quotes": ["error", "double"],
         "linebreak-style": 0,
-        "eslint linebreak-style": [0, "error", "windows"]
+        "eslint linebreak-style": [0, "error", "windows"],
+        "indent": "off"
     }
 };

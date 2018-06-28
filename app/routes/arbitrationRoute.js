@@ -1,22 +1,23 @@
 
-import express from "express";
-import * as records from "./../controllers/recordController";
+	import express from "express";
+	import * as arbitrations from "./../controllers/arbitrationController";
 
-const recordRoute = express.Router();
+	const arbitrationRoute = express.Router();
 
-// Create a new record
-recordRoute.post("/records", records.create);
+	// Create a new arbitration
+	arbitrationRoute.post("/arbitrations", arbitrations.create);
 
-// Retrieve all Notes
-recordRoute.get("/records", records.findAll);
+	// Retrieve all Notes
+	arbitrationRoute.get("/arbitrations", arbitrations.findAll);
 
-// Retrieve a single record with recordId
-recordRoute.get("/records/:recordId", records.findOne);
+	// Retrieve a single arbitration with arbitrationId
+	arbitrationRoute.get("/arbitrations/:arbitrationId", arbitrations.findOne);
 
-// Update a record with recordId
-recordRoute.put("/records/:recordId", records.update);
+	// Update a arbitration with arbitrationId
+	arbitrationRoute.put("/arbitrations/:arbitrationId", arbitrations.update);
 
-// Delete a record with recordId
-recordRoute.delete("/records/:recordId", records.delete);
+	// Delete a arbitration with arbitrationId
+	arbitrationRoute.delete("/arbitrations/:arbitrationId", arbitrations.delete);
 
-export default recordRoute;
+	export default arbitrationRoute;
+	
