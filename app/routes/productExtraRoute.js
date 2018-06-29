@@ -1,23 +1,22 @@
 
-	import express from "express";
-	import * as productExtras from "./../controllers/productExtraController";
+import express from "express";
+import * as productExtra from "./../controllers/productExtraController";
 
-	const productExtraRoute = express.Router();
+const productExtraRoute = express.Router();
 
-	// Create a new productExtra
-	productExtraRoute.post("/productExtras", productExtras.create);
+// Create a new productExtra
+productExtraRoute.post("/productExtras", productExtra.create);
 
-	// Retrieve all Notes
-	productExtraRoute.get("/productExtras", productExtras.findAll);
+// Retrieve all Notes
+productExtraRoute.get("/productExtras", productExtra.findAll);
 
-	// Retrieve a single productExtra with productExtraId
-	productExtraRoute.get("/productExtras/:productExtraId", productExtras.findOne);
+// Retrieve a single productExtra with productExtraId
+productExtraRoute.get("/productExtras/:productExtraId", productExtra.findOne);
 
-	// Update a productExtra with productExtraId
-	productExtraRoute.put("/productExtras/:productExtraId", productExtras.update);
+// Update a productExtra with productExtraId
+productExtraRoute.put("/productExtras/:productExtraId", productExtra.update);
 
-	// Delete a productExtra with productExtraId
-	productExtraRoute.delete("/productExtras/:productExtraId", productExtras.delete);
+// Delete a productExtra with productExtraId
+productExtraRoute.delete("/productExtras/:productExtraId", productExtra.delete);
 
-	export default productExtraRoute;
-	
+export default productExtraRoute;

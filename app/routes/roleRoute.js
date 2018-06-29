@@ -1,23 +1,22 @@
 
-	import express from "express";
-	import * as roles from "./../controllers/roleController";
+import express from "express";
+import * as role from "./../controllers/roleController";
 
-	const roleRoute = express.Router();
+const roleRoute = express.Router();
 
-	// Create a new role
-	roleRoute.post("/roles", roles.create);
+// Create a new role
+roleRoute.post("/roles", role.create);
 
-	// Retrieve all Notes
-	roleRoute.get("/roles", roles.findAll);
+// Retrieve all Notes
+roleRoute.get("/roles", role.findAll);
 
-	// Retrieve a single role with roleId
-	roleRoute.get("/roles/:roleId", roles.findOne);
+// Retrieve a single role with roleId
+roleRoute.get("/roles/:roleId", role.findOne);
 
-	// Update a role with roleId
-	roleRoute.put("/roles/:roleId", roles.update);
+// Update a role with roleId
+roleRoute.put("/roles/:roleId", role.update);
 
-	// Delete a role with roleId
-	roleRoute.delete("/roles/:roleId", roles.delete);
+// Delete a role with roleId
+roleRoute.delete("/roles/:roleId", role.delete);
 
-	export default roleRoute;
-	
+export default roleRoute;

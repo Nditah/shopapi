@@ -1,23 +1,22 @@
 
-	import express from "express";
-	import * as medias from "./../controllers/mediaController";
+import express from "express";
+import * as media from "./../controllers/mediaController";
 
-	const mediaRoute = express.Router();
+const mediaRoute = express.Router();
 
-	// Create a new media
-	mediaRoute.post("/medias", medias.create);
+// Create a new media
+mediaRoute.post("/medias", media.create);
 
-	// Retrieve all Notes
-	mediaRoute.get("/medias", medias.findAll);
+// Retrieve all Notes
+mediaRoute.get("/medias", media.findAll);
 
-	// Retrieve a single media with mediaId
-	mediaRoute.get("/medias/:mediaId", medias.findOne);
+// Retrieve a single media with mediaId
+mediaRoute.get("/medias/:mediaId", media.findOne);
 
-	// Update a media with mediaId
-	mediaRoute.put("/medias/:mediaId", medias.update);
+// Update a media with mediaId
+mediaRoute.put("/medias/:mediaId", media.update);
 
-	// Delete a media with mediaId
-	mediaRoute.delete("/medias/:mediaId", medias.delete);
+// Delete a media with mediaId
+mediaRoute.delete("/medias/:mediaId", media.delete);
 
-	export default mediaRoute;
-	
+export default mediaRoute;

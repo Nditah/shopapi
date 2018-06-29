@@ -1,23 +1,22 @@
 
-	import express from "express";
-	import * as blogs from "./../controllers/blogController";
+import express from "express";
+import * as blog from "./../controllers/blogController";
 
-	const blogRoute = express.Router();
+const blogRoute = express.Router();
 
-	// Create a new blog
-	blogRoute.post("/blogs", blogs.create);
+// Create a new blog
+blogRoute.post("/blogs", blog.create);
 
-	// Retrieve all Notes
-	blogRoute.get("/blogs", blogs.findAll);
+// Retrieve all Notes
+blogRoute.get("/blogs", blog.findAll);
 
-	// Retrieve a single blog with blogId
-	blogRoute.get("/blogs/:blogId", blogs.findOne);
+// Retrieve a single blog with blogId
+blogRoute.get("/blogs/:blogId", blog.findOne);
 
-	// Update a blog with blogId
-	blogRoute.put("/blogs/:blogId", blogs.update);
+// Update a blog with blogId
+blogRoute.put("/blogs/:blogId", blog.update);
 
-	// Delete a blog with blogId
-	blogRoute.delete("/blogs/:blogId", blogs.delete);
+// Delete a blog with blogId
+blogRoute.delete("/blogs/:blogId", blog.delete);
 
-	export default blogRoute;
-	
+export default blogRoute;

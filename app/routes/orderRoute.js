@@ -1,23 +1,22 @@
 
-	import express from "express";
-	import * as orders from "./../controllers/orderController";
+import express from "express";
+import * as order from "./../controllers/orderController";
 
-	const orderRoute = express.Router();
+const orderRoute = express.Router();
 
-	// Create a new order
-	orderRoute.post("/orders", orders.create);
+// Create a new order
+orderRoute.post("/orders", order.create);
 
-	// Retrieve all Notes
-	orderRoute.get("/orders", orders.findAll);
+// Retrieve all Notes
+orderRoute.get("/orders", order.findAll);
 
-	// Retrieve a single order with orderId
-	orderRoute.get("/orders/:orderId", orders.findOne);
+// Retrieve a single order with orderId
+orderRoute.get("/orders/:orderId", order.findOne);
 
-	// Update a order with orderId
-	orderRoute.put("/orders/:orderId", orders.update);
+// Update a order with orderId
+orderRoute.put("/orders/:orderId", order.update);
 
-	// Delete a order with orderId
-	orderRoute.delete("/orders/:orderId", orders.delete);
+// Delete a order with orderId
+orderRoute.delete("/orders/:orderId", order.delete);
 
-	export default orderRoute;
-	
+export default orderRoute;

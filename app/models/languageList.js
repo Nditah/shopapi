@@ -1,13 +1,20 @@
 
-		import mongoose from "mongoose";
+import mongoose from "mongoose";
 
-		const LanguageListSchema = mongoose.Schema({
-		title: String,
-		content: String,
-		}, {
-		timestamps: true,
-		});
+const LanguageListSchema = new mongoose.Schema({
+  name: { type: String, required: [true, "Why no name?"] },
+  db_field: { type: String, required: [true, "Why no langauge table field name?"] },
+  image: { type: String, required: [true, "Why no image?"] },
+  standing: {
+    type: String,
+    enum: ["active", "suspended", "trashed"],
+    default: "active",
+    required: [true, "Why no status?"],
+  },
+  updated: { type: Date, default: Date.now },
+}, {
+  timestamps: true,
+});
 
-		const LanguageList = mongoose.model("LanguageList", LanguageListSchema);
-		export default LanguageList;
-	
+const LanguageList = mongoose.model("LanguageList", LanguageListSchema);
+export default LanguageList;

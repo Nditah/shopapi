@@ -1,13 +1,25 @@
 
-		import mongoose from "mongoose";
+import mongoose from "mongoose";
 
-		const CategorySchema = mongoose.Schema({
-		title: String,
-		content: String,
-		}, {
-		timestamps: true,
-		});
+const CategorySchema = new mongoose.Schema({
+  name: { type: String, required: [true, "Why no name?"] },
+  description: { type: String, required: [true, "Why no description?"] },
+  kind: { type: String, enum: ["digital", "physical"], required: [true, "Why no category type?"] },
+  logo: { type: String, required: [true, "Why no logo?"] },
+  banner: { type: String, required: [true, "Why no banner?"] },
+  parent: { type: String },
+  created_by: { type: Number, required: [true, "Why no Vendor?"] },
+  view_count: { type: Number, default: 1 },
+  standing: {
+    type: String,
+    enum: ["active", "suspended", "trashed"],
+    default: "active",
+    required: [true, "Why no status?"],
+  },
+  updated: { type: Date, default: Date.now },
+}, {
+  timestamps: true,
+});
 
-		const Category = mongoose.model("Category", CategorySchema);
-		export default Category;
-	
+const Category = mongoose.model("Category", CategorySchema);
+export default Category;

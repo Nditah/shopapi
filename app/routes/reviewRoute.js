@@ -1,23 +1,22 @@
 
-	import express from "express";
-	import * as reviews from "./../controllers/reviewController";
+import express from "express";
+import * as review from "./../controllers/reviewController";
 
-	const reviewRoute = express.Router();
+const reviewRoute = express.Router();
 
-	// Create a new review
-	reviewRoute.post("/reviews", reviews.create);
+// Create a new review
+reviewRoute.post("/reviews", review.create);
 
-	// Retrieve all Notes
-	reviewRoute.get("/reviews", reviews.findAll);
+// Retrieve all Notes
+reviewRoute.get("/reviews", review.findAll);
 
-	// Retrieve a single review with reviewId
-	reviewRoute.get("/reviews/:reviewId", reviews.findOne);
+// Retrieve a single review with reviewId
+reviewRoute.get("/reviews/:reviewId", review.findOne);
 
-	// Update a review with reviewId
-	reviewRoute.put("/reviews/:reviewId", reviews.update);
+// Update a review with reviewId
+reviewRoute.put("/reviews/:reviewId", review.update);
 
-	// Delete a review with reviewId
-	reviewRoute.delete("/reviews/:reviewId", reviews.delete);
+// Delete a review with reviewId
+reviewRoute.delete("/reviews/:reviewId", review.delete);
 
-	export default reviewRoute;
-	
+export default reviewRoute;

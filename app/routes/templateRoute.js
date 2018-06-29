@@ -1,23 +1,22 @@
 
-	import express from "express";
-	import * as templates from "./../controllers/templateController";
+import express from "express";
+import * as template from "./../controllers/templateController";
 
-	const templateRoute = express.Router();
+const templateRoute = express.Router();
 
-	// Create a new template
-	templateRoute.post("/templates", templates.create);
+// Create a new template
+templateRoute.post("/templates", template.create);
 
-	// Retrieve all Notes
-	templateRoute.get("/templates", templates.findAll);
+// Retrieve all Notes
+templateRoute.get("/templates", template.findAll);
 
-	// Retrieve a single template with templateId
-	templateRoute.get("/templates/:templateId", templates.findOne);
+// Retrieve a single template with templateId
+templateRoute.get("/templates/:templateId", template.findOne);
 
-	// Update a template with templateId
-	templateRoute.put("/templates/:templateId", templates.update);
+// Update a template with templateId
+templateRoute.put("/templates/:templateId", template.update);
 
-	// Delete a template with templateId
-	templateRoute.delete("/templates/:templateId", templates.delete);
+// Delete a template with templateId
+templateRoute.delete("/templates/:templateId", template.delete);
 
-	export default templateRoute;
-	
+export default templateRoute;

@@ -1,23 +1,22 @@
 
-	import express from "express";
-	import * as subscribes from "./../controllers/subscribeController";
+import express from "express";
+import * as subscribe from "./../controllers/subscribeController";
 
-	const subscribeRoute = express.Router();
+const subscribeRoute = express.Router();
 
-	// Create a new subscribe
-	subscribeRoute.post("/subscribes", subscribes.create);
+// Create a new subscribe
+subscribeRoute.post("/subscribes", subscribe.create);
 
-	// Retrieve all Notes
-	subscribeRoute.get("/subscribes", subscribes.findAll);
+// Retrieve all Notes
+subscribeRoute.get("/subscribes", subscribe.findAll);
 
-	// Retrieve a single subscribe with subscribeId
-	subscribeRoute.get("/subscribes/:subscribeId", subscribes.findOne);
+// Retrieve a single subscribe with subscribeId
+subscribeRoute.get("/subscribes/:subscribeId", subscribe.findOne);
 
-	// Update a subscribe with subscribeId
-	subscribeRoute.put("/subscribes/:subscribeId", subscribes.update);
+// Update a subscribe with subscribeId
+subscribeRoute.put("/subscribes/:subscribeId", subscribe.update);
 
-	// Delete a subscribe with subscribeId
-	subscribeRoute.delete("/subscribes/:subscribeId", subscribes.delete);
+// Delete a subscribe with subscribeId
+subscribeRoute.delete("/subscribes/:subscribeId", subscribe.delete);
 
-	export default subscribeRoute;
-	
+export default subscribeRoute;

@@ -1,23 +1,22 @@
 
-	import express from "express";
-	import * as currencys from "./../controllers/currencyController";
+import express from "express";
+import * as currency from "./../controllers/currencyController";
 
-	const currencyRoute = express.Router();
+const currencyRoute = express.Router();
 
-	// Create a new currency
-	currencyRoute.post("/currencys", currencys.create);
+// Create a new currency
+currencyRoute.post("/currencies", currency.create);
 
-	// Retrieve all Notes
-	currencyRoute.get("/currencys", currencys.findAll);
+// Retrieve all Notes
+currencyRoute.get("/currencies", currency.findAll);
 
-	// Retrieve a single currency with currencyId
-	currencyRoute.get("/currencys/:currencyId", currencys.findOne);
+// Retrieve a single currency with currencyId
+currencyRoute.get("/currencies/:currencyId", currency.findOne);
 
-	// Update a currency with currencyId
-	currencyRoute.put("/currencys/:currencyId", currencys.update);
+// Update a currency with currencyId
+currencyRoute.put("/currencies/:currencyId", currency.update);
 
-	// Delete a currency with currencyId
-	currencyRoute.delete("/currencys/:currencyId", currencys.delete);
+// Delete a currency with currencyId
+currencyRoute.delete("/currencies/:currencyId", currency.delete);
 
-	export default currencyRoute;
-	
+export default currencyRoute;

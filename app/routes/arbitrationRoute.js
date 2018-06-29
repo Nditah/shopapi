@@ -1,23 +1,22 @@
 
-	import express from "express";
-	import * as arbitrations from "./../controllers/arbitrationController";
+import express from "express";
+import * as arbitration from "./../controllers/arbitrationController";
 
-	const arbitrationRoute = express.Router();
+const arbitrationRoute = express.Router();
 
-	// Create a new arbitration
-	arbitrationRoute.post("/arbitrations", arbitrations.create);
+// Create a new arbitration
+arbitrationRoute.post("/arbitrations", arbitration.create);
 
-	// Retrieve all Notes
-	arbitrationRoute.get("/arbitrations", arbitrations.findAll);
+// Retrieve all Notes
+arbitrationRoute.get("/arbitrations", arbitration.findAll);
 
-	// Retrieve a single arbitration with arbitrationId
-	arbitrationRoute.get("/arbitrations/:arbitrationId", arbitrations.findOne);
+// Retrieve a single arbitration with arbitrationId
+arbitrationRoute.get("/arbitrations/:arbitrationId", arbitration.findOne);
 
-	// Update a arbitration with arbitrationId
-	arbitrationRoute.put("/arbitrations/:arbitrationId", arbitrations.update);
+// Update a arbitration with arbitrationId
+arbitrationRoute.put("/arbitrations/:arbitrationId", arbitration.update);
 
-	// Delete a arbitration with arbitrationId
-	arbitrationRoute.delete("/arbitrations/:arbitrationId", arbitrations.delete);
+// Delete a arbitration with arbitrationId
+arbitrationRoute.delete("/arbitrations/:arbitrationId", arbitration.delete);
 
-	export default arbitrationRoute;
-	
+export default arbitrationRoute;

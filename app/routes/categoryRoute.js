@@ -1,23 +1,22 @@
 
-	import express from "express";
-	import * as categorys from "./../controllers/categoryController";
+import express from "express";
+import * as category from "./../controllers/categoryController";
 
-	const categoryRoute = express.Router();
+const categoryRoute = express.Router();
 
-	// Create a new category
-	categoryRoute.post("/categorys", categorys.create);
+// Create a new category
+categoryRoute.post("/categories", category.create);
 
-	// Retrieve all Notes
-	categoryRoute.get("/categorys", categorys.findAll);
+// Retrieve all Notes
+categoryRoute.get("/categories", category.findAll);
 
-	// Retrieve a single category with categoryId
-	categoryRoute.get("/categorys/:categoryId", categorys.findOne);
+// Retrieve a single category with categoryId
+categoryRoute.get("/categories/:categoryId", category.findOne);
 
-	// Update a category with categoryId
-	categoryRoute.put("/categorys/:categoryId", categorys.update);
+// Update a category with categoryId
+categoryRoute.put("/categories/:categoryId", category.update);
 
-	// Delete a category with categoryId
-	categoryRoute.delete("/categorys/:categoryId", categorys.delete);
+// Delete a category with categoryId
+categoryRoute.delete("/categories/:categoryId", category.delete);
 
-	export default categoryRoute;
-	
+export default categoryRoute;
